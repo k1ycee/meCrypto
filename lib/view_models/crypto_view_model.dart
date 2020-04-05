@@ -72,17 +72,7 @@ class CryptoViewModel{
   The1D get the1D{
     return this.crypto.the1D;
   }
-
-  The1D get the7D{
-    return this.crypto.the7D;
-  }
-
   The1D get the30D{
     return this.crypto.the30D;
-  }
-
-  The1D get the365D{
-    return this.crypto.the365D;
-  }
-  
+  }  
 }

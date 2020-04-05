@@ -11,10 +11,7 @@ class Crypto {
     final String circulatingSupply;
     final String maxSupply;
     final The1D the1D;
-    final The1D the7D;
     final The1D the30D;
-    final The1D the365D;
-    final The1D ytd;
     final String high;
     final DateTime highTimestamp;
 
@@ -31,10 +28,7 @@ class Crypto {
         this.circulatingSupply,
         this.maxSupply,
         this.the1D,
-        this.the7D,
         this.the30D,
-        this.the365D,
-        this.ytd,
         this.high,
         this.highTimestamp,
     });
@@ -52,10 +46,7 @@ class Crypto {
         circulatingSupply: json["circulating_supply"] == null ? null : json["circulating_supply"],
         maxSupply: json["max_supply"] == null ? null : json["max_supply"],
         the1D: json["1d"] == null ? null : The1D.fromJson(json["1d"]),
-        the7D: json["7d"] == null ? null : The1D.fromJson(json["7d"]),
         the30D: json["30d"] == null ? null : The1D.fromJson(json["30d"]),
-        the365D: json["365d"] == null ? null : The1D.fromJson(json["365d"]),
-        ytd: json["ytd"] == null ? null : The1D.fromJson(json["ytd"]),
         high: json["high"],
         highTimestamp: DateTime.parse(json["high_timestamp"]),
     );
@@ -73,10 +64,7 @@ class Crypto {
         "circulating_supply": circulatingSupply == null ? null : circulatingSupply,
         "max_supply": maxSupply == null ? null : maxSupply,
         "1d": the1D == null ? null : the1D.toJson(),
-        "7d": the7D == null ? null : the7D.toJson(),
         "30d": the30D == null ? null : the30D.toJson(),
-        "365d": the365D == null ? null : the365D.toJson(),
-        "ytd": ytd == null ? null : ytd.toJson(),
         "high": high,
         "high_timestamp": highTimestamp.toIso8601String(),
     };
@@ -105,8 +93,8 @@ class The1D {
         priceChange: json["price_change"],
         priceChangePct: json["price_change_pct"],
         volume: json["volume"],
-        volumeChange: json["volume_change"] == null ? null : json["volume_change"],
-        volumeChangePct: json["volume_change_pct"] == null ? null : json["volume_change_pct"],
+        volumeChange: json["volume_change"],
+        volumeChangePct: json["volume_change_pct"],
         marketCapChange: json["market_cap_change"] == null ? null : json["market_cap_change"],
         marketCapChangePct: json["market_cap_change_pct"] == null ? null : json["market_cap_change_pct"],
     );
@@ -115,8 +103,8 @@ class The1D {
         "price_change": priceChange,
         "price_change_pct": priceChangePct,
         "volume": volume,
-        "volume_change": volumeChange == null ? null : volumeChange,
-        "volume_change_pct": volumeChangePct == null ? null : volumeChangePct,
+        "volume_change": volumeChange,
+        "volume_change_pct": volumeChangePct,
         "market_cap_change": marketCapChange == null ? null : marketCapChange,
         "market_cap_change_pct": marketCapChangePct == null ? null : marketCapChangePct,
     };

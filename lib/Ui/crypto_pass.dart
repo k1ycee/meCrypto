@@ -22,6 +22,11 @@ class _CryptoPassState extends State<CryptoPass> {
   @override
   Widget build(BuildContext context) {
     final crypt = Provider.of<CryptoList>(context);
-    return Scaffold(body:  Container(child:CryptoUI(crypted: crypt.cryptos)));
+    return Scaffold(body: 
+    Column(children: <Widget>[
+      Expanded(child:(CryptoUI(crypted: crypt.cryptos,)),flex: 5,)
+    ],
+    )
+    );
   }
 }
